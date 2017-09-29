@@ -57,6 +57,10 @@ class Car {
     started = false
     clearInterval(this.id)
   }
+
+  turn(direction) {
+    this.direction = direction
+  }
 }
 
 const chronoJet = new Car($car, 'south', 20, [10, 10])

@@ -35,11 +35,16 @@ class Car {
   static start(car) {
     setInterval(function () {
       car.move()
-    }, 16)
+    }, 500)
   }
 }
 
 const chronoJet = new Car($car, 'north', 30, [0, 0])
 
-chronoJet.move()
-Car.start(chronoJet)
+document.body.addEventListener('keydown', function () {
+  const key = event.keyCode
+  if (key === 32) {
+    chronoJet.move()
+    Car.start(chronoJet)
+  }
+})

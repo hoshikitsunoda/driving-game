@@ -5,7 +5,7 @@ const $car = document.createElement('img')
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
 
-$car.setAttribute('style', 'width: 100px; height: 130px;')
+$car.setAttribute('style', 'width: 100px; height: 140px;')
 
 document.body.appendChild($car)
 
@@ -14,14 +14,15 @@ class Car {
     this.direction = direction
     this.speed = speed
     this.location = location
+
   }
 
   move() {
     if (this.direction === 'north') {
-      this.location[1] += this.speed
+      this.location[1] -= this.speed
     }
     else if (this.direction === 'south') {
-      this.location[1] -= this.speed
+      this.location[1] += this.speed
     }
     else if (this.direction === 'west') {
       this.location[0] -= this.speed
@@ -29,17 +30,26 @@ class Car {
     else if (this.direction === 'east') {
       this.location[0] += this.speed
     }
-    return this.location
+  }
+
+  position() {
+    const $car = document.querySelector('img')
+    const {top, left} = $car.style
+    Object.assign($car.style, {
+      left: this.location[0] + 'px',
+      top: this.location[1] + 'px'
+    })
   }
 
   static start(car) {
     setInterval(function () {
       car.move()
+      car.position()
     }, 500)
   }
 }
 
-const chronoJet = new Car($car, 'north', 30, [0, 0])
+const chronoJet = new Car($car, 'south', 10, [10, 10])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode

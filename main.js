@@ -40,6 +40,14 @@ class Car {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'
     })
+    if (this.location[0] > 1300) {
+      $car.setAttribute('src', 'explode.png')
+      this.speed = 0
+    }
+    else if (this.location[1] > 600) {
+      $car.setAttribute('src', 'explode.png')
+      this.speed = 0
+    }
   }
 
   static start(car) {

@@ -6,6 +6,7 @@ $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
 
 $car.setAttribute('style', 'width: 100px; height: 140px;')
+$car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
 
@@ -77,5 +78,12 @@ document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 83) {
     Car.stop(chronoJet)
+  }
+})
+
+document.body.addEventListener('keydown', function (event) {
+  const key = event.keyCode
+  if (key === 38) {
+
   }
 })

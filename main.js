@@ -48,7 +48,7 @@ class Car {
       this.id = setInterval(function () {
         car.move()
         car.position()
-      }, 50)
+      }, 100)
     }
   }
 
@@ -60,9 +60,13 @@ class Car {
   turn(direction) {
     this.direction = direction
   }
+
+  accelerate(amount) {
+    this.speed += amount
+  }
 }
 
-const chronoJet = new Car($car, 'south', 40, [0, 0])
+const chronoJet = new Car($car, 'south', 10, [0, 0])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
@@ -95,5 +99,12 @@ document.body.addEventListener('keydown', function (event) {
   else if (key === 37) {
     chronoJet.turn('west')
     $car.style.transform = 'rotate(270deg)'
+  }
+})
+
+document.body.addEventListener('keydown', function () {
+  const key = event.keyCode
+  if (key === 65) {
+    chronoJet.accelerate(10)
   }
 })

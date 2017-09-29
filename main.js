@@ -36,8 +36,6 @@ class Car {
   }
 
   position() {
-    const $car = document.querySelector('img')
-    const {top, left} = $car.style
     Object.assign($car.style, {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'
@@ -84,6 +82,19 @@ document.body.addEventListener('keydown', function () {
 document.body.addEventListener('keydown', function (event) {
   const key = event.keyCode
   if (key === 38) {
-
+    chronoJet.turn('north')
+    $car.style.transform = 'rotate(0deg)'
+  }
+  else if (key === 40) {
+    chronoJet.turn('south')
+    $car.style.transform = 'rotate(180deg)'
+  }
+  else if (key === 39) {
+    chronoJet.turn('east')
+    $car.style.transform = 'rotate(90deg)'
+  }
+  else if (key === 37) {
+    chronoJet.turn('west')
+    $car.style.transform = 'rotate(270deg)'
   }
 })

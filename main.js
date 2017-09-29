@@ -64,20 +64,25 @@ class Car {
   accelerate(amount) {
     this.speed += amount
   }
+
+  decelerate(amount) {
+    if (this.speed > 0) {
+      this.speed -= amount
+    }
+    else {
+      this.speed = 0
+    }
+  }
 }
 
-const chronoJet = new Car($car, 'south', 10, [0, 0])
+const chronoJet = new Car($car, 'south', 20, [0, 0])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 32) {
     Car.start(chronoJet)
   }
-})
-
-document.body.addEventListener('keydown', function () {
-  const key = event.keyCode
-  if (key === 83) {
+  else if (key === 83) {
     Car.stop(chronoJet)
   }
 })
@@ -106,5 +111,8 @@ document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 65) {
     chronoJet.accelerate(10)
+  }
+  else if (key === 90) {
+    chronoJet.decelerate(10)
   }
 })

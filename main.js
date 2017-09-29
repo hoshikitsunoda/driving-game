@@ -62,12 +62,11 @@ class Car {
   }
 }
 
-const chronoJet = new Car($car, 'south', 20, [10, 10])
+const chronoJet = new Car($car, 'south', 40, [0, 0])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 32) {
-    chronoJet.move()
     Car.start(chronoJet)
   }
 })

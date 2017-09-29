@@ -35,8 +35,6 @@ class Car {
   }
 
   position() {
-    const $car = document.querySelector('img')
-    const {top, left} = $car.style
     Object.assign($car.style, {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'

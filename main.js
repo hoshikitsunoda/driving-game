@@ -48,7 +48,7 @@ class Car {
       this.id = setInterval(function () {
         car.move()
         car.position()
-      }, 500)
+      }, 50)
     }
   }
 

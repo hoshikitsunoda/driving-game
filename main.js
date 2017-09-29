@@ -9,6 +9,8 @@ $car.setAttribute('style', 'width: 100px; height: 140px;')
 
 document.body.appendChild($car)
 
+let started = false
+
 class Car {
   constructor(car, direction, speed, location) {
     this.direction = direction
@@ -42,19 +44,34 @@ class Car {
   }
 
   static start(car) {
-    setInterval(function () {
-      car.move()
-      car.position()
-    }, 500)
+    if (started === false) {
+      started = true
+      this.id = setInterval(function () {
+        car.move()
+        car.position()
+      }, 500)
+    }
+  }
+
+  static stop(car) {
+    started = false
+    clearInterval(this.id)
   }
 }
 
-const chronoJet = new Car($car, 'south', 10, [10, 10])
+const chronoJet = new Car($car, 'south', 20, [10, 10])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 32) {
     chronoJet.move()
     Car.start(chronoJet)
+  }
+})
+
+document.body.addEventListener('keydown', function () {
+  const key = event.keyCode
+  if (key === 83) {
+    Car.stop(chronoJet)
   }
 })

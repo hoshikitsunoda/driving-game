@@ -6,6 +6,7 @@ $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
 
 $car.setAttribute('style', 'width: 100px; height: 140px;')
+$car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
 
@@ -35,8 +36,6 @@ class Car {
   }
 
   position() {
-    const $car = document.querySelector('img')
-    const {top, left} = $car.style
     Object.assign($car.style, {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'
@@ -57,14 +56,17 @@ class Car {
     started = false
     clearInterval(this.id)
   }
+
+  turn(direction) {
+    this.direction = direction
+  }
 }
 
-const chronoJet = new Car($car, 'south', 20, [10, 10])
+const chronoJet = new Car($car, 'south', 40, [0, 0])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 32) {
-    chronoJet.move()
     Car.start(chronoJet)
   }
 })
@@ -73,5 +75,25 @@ document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 83) {
     Car.stop(chronoJet)
+  }
+})
+
+document.body.addEventListener('keydown', function (event) {
+  const key = event.keyCode
+  if (key === 38) {
+    chronoJet.turn('north')
+    $car.style.transform = 'rotate(0deg)'
+  }
+  else if (key === 40) {
+    chronoJet.turn('south')
+    $car.style.transform = 'rotate(180deg)'
+  }
+  else if (key === 39) {
+    chronoJet.turn('east')
+    $car.style.transform = 'rotate(90deg)'
+  }
+  else if (key === 37) {
+    chronoJet.turn('west')
+    $car.style.transform = 'rotate(270deg)'
   }
 })

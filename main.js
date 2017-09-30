@@ -4,6 +4,7 @@ const $car = document.createElement('img')
 const $over = document.createElement('img')
 const $music = document.createElement('embed')
 const $sound = document.createElement('embed')
+const $sad = document.createElement('embed')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -22,6 +23,14 @@ Object.assign($music.style, {
 $sound.setAttribute('src', 'explosion.wav')
 $sound.setAttribute('autostart', 'true')
 Object.assign($sound.style, {
+  width: '2px',
+  height: '0'
+})
+
+$sad.setAttribute('src', 'sadmusic.mp3')
+$sad.setAttribute('autostart', 'true')
+$sad.setAttribute('loop', 'true')
+Object.assign($sad.style, {
   width: '2px',
   height: '0'
 })

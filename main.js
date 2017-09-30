@@ -66,6 +66,7 @@ class Car {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
+      document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
       }, 700)
@@ -77,6 +78,7 @@ class Car {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
+      document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
       }, 500)

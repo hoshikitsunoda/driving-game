@@ -12,6 +12,7 @@ const $box3 = document.createElement('div')
 const $box4 = document.createElement('div')
 const $box5 = document.createElement('div')
 const $box6 = document.createElement('div')
+const $beat = document.createElement('div')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -54,6 +55,8 @@ $button.textContent = 'Continue?'
 $car.setAttribute('style', 'width: 60px; height: 80px;')
 $car.style.transform = 'rotate(180deg)'
 
+$beat.setAttribute('class', 'beat')
+
 document.body.appendChild($car)
 document.body.appendChild($box1)
 document.body.appendChild($box2)
@@ -61,6 +64,7 @@ document.body.appendChild($box3)
 document.body.appendChild($box4)
 document.body.appendChild($box5)
 document.body.appendChild($box6)
+document.body.appendChild($beat)
 
 let started = false
 let startedBgm = false

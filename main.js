@@ -134,6 +134,10 @@ class Car {
   }
 }
 
+$conti.addEventListener('click', function refresh() {
+  location.reload()
+})
+
 const chronoJet = new Car($car, 'south', 20, [0, 0])
 
 document.body.addEventListener('keydown', function () {

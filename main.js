@@ -5,6 +5,7 @@ const $over = document.createElement('img')
 const $music = document.createElement('embed')
 const $sound = document.createElement('embed')
 const $sad = document.createElement('embed')
+const $conti = document.createElement('button')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -35,10 +36,13 @@ Object.assign($sad.style, {
   height: '0'
 })
 
+$conti.textContent = 'Continue?'
+
 $car.setAttribute('style', 'width: 100px; height: 140px;')
 $car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
+document.body.appendChild($conti)
 
 let started = false
 let startedBgm = false

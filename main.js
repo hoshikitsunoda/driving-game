@@ -6,6 +6,7 @@ const $music = document.createElement('embed')
 const $sound = document.createElement('embed')
 const $sad = document.createElement('embed')
 const $button = document.createElement('button')
+const $box1 = document.createElement('div')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -74,35 +75,35 @@ class Car {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'
     })
-    if (this.location[0] > 1300 || this.location[0] <= -1) {
+    if (this.location[0] > 1350 || this.location[0] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
       document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 700)
-      setTimeout(function update() {
-        document.body.appendChild($sad)
       }, 1200)
       setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1500)
+      setTimeout(function update() {
         document.body.appendChild($button)
-      }, 5000)
+      }, 7300)
     }
-    else if (this.location[1] > 600 || this.location[1] <= -1) {
+    else if (this.location[1] > 690 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
       document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 700)
-      setTimeout(function update() {
-        document.body.appendChild($sad)
       }, 1200)
       setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1500)
+      setTimeout(function update() {
         document.body.appendChild($button)
-      }, 5000)
+      }, 7300)
     }
   }
 
@@ -143,7 +144,7 @@ $button.addEventListener('click', function refresh() {
   location.reload()
 })
 
-const chronoJet = new Car($car, 'south', 8, [0, 0])
+const chronoJet = new Car($car, 'south', 12, [660, 10])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
@@ -183,9 +184,11 @@ document.body.addEventListener('keydown', function (event) {
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 65) {
-    chronoJet.accelerate(10)
+    if (started) {
+      chronoJet.accelerate(3)
+    }
   }
   else if (key === 90) {
-    chronoJet.decelerate(10)
+    chronoJet.decelerate(3)
   }
 })

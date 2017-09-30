@@ -38,7 +38,7 @@ Object.assign($sad.style, {
 
 $button.textContent = 'Continue?'
 
-$car.setAttribute('style', 'width: 100px; height: 140px;')
+$car.setAttribute('style', 'width: 60px; height: 80px;')
 $car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
@@ -112,7 +112,7 @@ class Car {
       this.id = setInterval(function () {
         car.move()
         car.position()
-      }, 100)
+      }, 60)
     }
   }
 
@@ -143,7 +143,7 @@ $button.addEventListener('click', function refresh() {
   location.reload()
 })
 
-const chronoJet = new Car($car, 'south', 20, [0, 0])
+const chronoJet = new Car($car, 'south', 8, [0, 0])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode

@@ -24,6 +24,7 @@ $car.style.transform = 'rotate(180deg)'
 document.body.appendChild($car)
 
 let started = false
+let startedBgm = false
 
 class Car {
   constructor(car, direction, speed, location) {
@@ -114,7 +115,10 @@ document.body.addEventListener('keydown', function () {
   if (key === 32) {
     Car.start(chronoJet)
     const $body = document.querySelector('body')
-    $body.appendChild($music)
+    if (startedBgm === false) {
+      startedBgm = true
+      $body.appendChild($music)
+    }
   }
   else if (key === 83) {
     Car.stop(chronoJet)

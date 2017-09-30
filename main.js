@@ -5,7 +5,7 @@ const $over = document.createElement('img')
 const $music = document.createElement('embed')
 const $sound = document.createElement('embed')
 const $sad = document.createElement('embed')
-const $conti = document.createElement('button')
+const $button = document.createElement('button')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -36,13 +36,12 @@ Object.assign($sad.style, {
   height: '0'
 })
 
-$conti.textContent = 'Continue?'
+$button.textContent = 'Continue?'
 
 $car.setAttribute('style', 'width: 100px; height: 140px;')
 $car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
-document.body.appendChild($conti)
 
 let started = false
 let startedBgm = false
@@ -86,6 +85,9 @@ class Car {
       setTimeout(function update() {
         document.body.appendChild($sad)
       }, 1200)
+      setTimeout(function update() {
+        document.body.appendChild($button)
+      }, 5000)
     }
     else if (this.location[1] > 600 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
@@ -98,6 +100,9 @@ class Car {
       setTimeout(function update() {
         document.body.appendChild($sad)
       }, 1200)
+      setTimeout(function update() {
+        document.body.appendChild($button)
+      }, 5000)
     }
   }
 
@@ -134,7 +139,7 @@ class Car {
   }
 }
 
-$conti.addEventListener('click', function refresh() {
+$button.addEventListener('click', function refresh() {
   location.reload()
 })
 

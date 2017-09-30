@@ -1,9 +1,13 @@
 /* eslint-disable no-unused-vars */
 
 const $car = document.createElement('img')
+const $over = document.createElement('img')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
+
+$over.setAttribute('class', 'over')
+$over.setAttribute('src', 'gameover.jpg')
 
 $car.setAttribute('style', 'width: 100px; height: 140px;')
 $car.style.transform = 'rotate(180deg)'
@@ -40,13 +44,22 @@ class Car {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'
     })
-    if (this.location[0] > 1300) {
+    if (this.location[0] > 1300 || this.location[0] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
+      setTimeout(function update() {
+        document.body.appendChild($over)
+      }, 500)
+      setTimeout(function update() {
+        document.body.appendChild($over)
+      }, 500)
     }
-    else if (this.location[1] > 600) {
+    else if (this.location[1] > 600 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
+      setTimeout(function update() {
+        document.body.appendChild($over)
+      }, 500)
     }
   }
 

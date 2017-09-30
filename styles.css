@@ -3,3 +3,32 @@ img {
   left: 0;
   top: 0;
 }
+
+.over {
+  width: 1480px;
+  height: 860px;
+  transition: opacity 3s;
+}
+
+.box1 {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  width: 200px;
+  height: 120px;
+  border: 3px solid black;
+}
+
+.box2 {
+  position: absolute;
+  right: 80px;
+  top: 50px;
+  width: 120px;
+  height: 200px;
+  border: 3px solid black;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 100; }
+}

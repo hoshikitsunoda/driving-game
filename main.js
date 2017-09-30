@@ -80,8 +80,8 @@ class Car {
         document.body.appendChild($over)
       }, 700)
       setTimeout(function update() {
-        document.body.appendChild($over)
-      }, 700)
+        document.body.appendChild($sad)
+      }, 1200)
     }
     else if (this.location[1] > 600 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
@@ -90,7 +90,10 @@ class Car {
       document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 500)
+      }, 700)
+      setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1200)
     }
   }
 

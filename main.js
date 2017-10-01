@@ -202,9 +202,6 @@ document.body.addEventListener('keydown', function () {
       $body.appendChild($music)
     }
   }
-  else if (key === 83) {
-    Car.stop(chronoJet)
-  }
 })
 
 document.body.addEventListener('keydown', function (event) {
@@ -238,3 +235,5 @@ document.body.addEventListener('keydown', function () {
     chronoJet.decelerate(3)
   }
 })
+
+alert('Hit space bar to start, A key to accelerate, Z key to decelerate and S key to stop.')

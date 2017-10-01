@@ -85,6 +85,17 @@ button {
   border: 3px solid tomato;
 }
 
+.beat {
+  position: relative;
+  width: 1480px;
+  height: 860px;
+  top: -100px;
+  left: -10px;
+  margin: 0 auto;
+  background-color: white;
+  animation: fadein 3s;
+}
+
 @-webkit-keyframes fadein {
   from { opacity: 0; }
   to { opacity: 100; }

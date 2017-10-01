@@ -118,6 +118,7 @@ button {
   background-color: red;
   border: 3px solid tomato;
   border-radius: 50%;
+  opacity: 0.7;
   animation: move 3s ease-in-out infinite alternate;
 }
 
@@ -130,6 +131,7 @@ button {
   background-color: red;
   border: 3px solid tomato;
   border-radius: 50%;
+  opacity: 0.7;
   animation: move2 1.95s ease-in-out infinite alternate;
 }
 

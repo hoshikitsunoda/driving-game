@@ -41,7 +41,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
-  animation: neon1 1.95s ease-in-out infinite alternate;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box2 {
@@ -52,7 +60,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
-  animation: neon1 1.95s ease-in-out infinite alternate;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box3 {
@@ -63,7 +79,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
-  animation: neon1 1.95s ease-in-out infinite alternate;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box4 {
@@ -74,7 +98,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
-  animation: neon1 1.95s ease-in-out infinite alternate;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box5 {

@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+alert('Hit space bar to start, A key to accelerate, Z key to decelerate and S key to stop.')
+
 const $car = document.createElement('img')
 const $over = document.createElement('img')
 const $music = document.createElement('embed')
@@ -64,7 +66,6 @@ document.body.appendChild($box3)
 document.body.appendChild($box4)
 document.body.appendChild($box5)
 document.body.appendChild($box6)
-document.body.appendChild($beat)
 
 let started = false
 let startedBgm = false
@@ -180,6 +181,11 @@ class Car {
     if (this.speed > 0) {
       this.speed -= amount
     }
+    else if (this.speed === 0) {
+      setTimeout(function () {
+        document.body.appendChild($beat)
+      }, 15000)
+    }
     else {
       this.speed = 0
     }
@@ -190,7 +196,7 @@ $button.addEventListener('click', function refresh() {
   location.reload()
 })
 
-const chronoJet = new Car($car, 'south', 12, [660, 10])
+const chronoJet = new Car($car, 'south', 27, [660, 10])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
@@ -201,6 +207,12 @@ document.body.addEventListener('keydown', function () {
       startedBgm = true
       $body.appendChild($music)
     }
+  }
+  else if (key === 83) {
+    Car.stop(chronoJet)
+    setTimeout(function () {
+      document.body.appendChild($beat)
+    }, 15000)
   }
 })
 
@@ -235,5 +247,3 @@ document.body.addEventListener('keydown', function () {
     chronoJet.decelerate(3)
   }
 })
-
-alert('Hit space bar to start, A key to accelerate, Z key to decelerate and S key to stop.')

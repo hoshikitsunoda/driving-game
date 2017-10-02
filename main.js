@@ -188,6 +188,9 @@ class Car {
       setTimeout(function () {
         document.body.appendChild($beat)
       }, 15000)
+      setTimeout(function () {
+        document.body.appendChild($message)
+      }, 17000)
     }
     else {
       this.speed = 0
@@ -216,6 +219,9 @@ document.body.addEventListener('keydown', function () {
     setTimeout(function () {
       document.body.appendChild($beat)
     }, 15000)
+    setTimeout(function () {
+      document.body.appendChild($message)
+    }, 17000)
   }
 })
 

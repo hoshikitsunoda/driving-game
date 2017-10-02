@@ -16,6 +16,7 @@ const $box5 = document.createElement('div')
 const $box6 = document.createElement('div')
 const $beat = document.createElement('div')
 const $message = document.createElement('h1')
+const $endMusic = document.createElement('embed')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -46,6 +47,13 @@ Object.assign($sad.style, {
   height: '0'
 })
 
+$endMusic.setAttribute('src', 'nothing.mp3')
+$endMusic.setAttribute('autostart', 'true')
+Object.assign($endMusic.style, {
+  width: '2px',
+  height: '0'
+})
+
 $box1.setAttribute('class', 'box1')
 $box2.setAttribute('class', 'box2')
 $box3.setAttribute('class', 'box3')
@@ -69,6 +77,7 @@ document.body.appendChild($box3)
 document.body.appendChild($box4)
 document.body.appendChild($box5)
 document.body.appendChild($box6)
+document.body.appendChild($endMusic)
 
 let started = false
 let startedBgm = false

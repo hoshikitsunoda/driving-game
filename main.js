@@ -77,7 +77,6 @@ document.body.appendChild($box3)
 document.body.appendChild($box4)
 document.body.appendChild($box5)
 document.body.appendChild($box6)
-document.body.appendChild($endMusic)
 
 let started = false
 let startedBgm = false
@@ -198,8 +197,13 @@ class Car {
         document.body.appendChild($beat)
       }, 15000)
       setTimeout(function () {
+        document.body.removeChild($music)
         document.body.appendChild($message)
+        document.body.appendChild($endMusic)
       }, 17000)
+      setTimeout(function () {
+        document.body.appendChild($endMusic)
+      }, 18000)
     }
     else {
       this.speed = 0
@@ -229,8 +233,13 @@ document.body.addEventListener('keydown', function () {
       document.body.appendChild($beat)
     }, 15000)
     setTimeout(function () {
+      document.body.removeChild($music)
       document.body.appendChild($message)
+      document.body.appendChild($endMusic)
     }, 17000)
+    setTimeout(function () {
+      document.body.appendChild($endMusic)
+    }, 18000)
   }
 })
 

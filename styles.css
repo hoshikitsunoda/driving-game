@@ -146,6 +146,20 @@ button {
   animation: fadein 3s;
 }
 
+.message {
+  position: absolute;
+  width: 1480px;
+  height: 860px;
+  top: -30px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  line-height: 800px;
+  animation: fadein 6s;
+}
+
 @-webkit-keyframes fadein {
   from { opacity: 0; }
   to { opacity: 100; }

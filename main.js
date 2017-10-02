@@ -15,7 +15,7 @@ const $box4 = document.createElement('div')
 const $box5 = document.createElement('div')
 const $box6 = document.createElement('div')
 const $beat = document.createElement('div')
-const $message = document.createElement('div')
+const $message = document.createElement('h1')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -60,6 +60,7 @@ $beat.setAttribute('class', 'beat')
 $message.setAttribute('class', 'message')
 
 $button.textContent = 'Continue?'
+$message.textContent = 'Do nothing. And everything will be done.'
 
 document.body.appendChild($car)
 document.body.appendChild($box1)
@@ -68,7 +69,6 @@ document.body.appendChild($box3)
 document.body.appendChild($box4)
 document.body.appendChild($box5)
 document.body.appendChild($box6)
-document.body.appendChild($message)
 
 let started = false
 let startedBgm = false

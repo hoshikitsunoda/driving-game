@@ -4,6 +4,16 @@ img {
   top: 0;
 }
 
+button {
+  position: relative;
+  height: 70px;
+  width: 120px;
+  color: white;
+  border-radius: 5px;
+  left: 1200px;
+  top: 650px;
+}
+
 .over {
   width: 1480px;
   height: 860px;

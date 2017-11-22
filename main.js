@@ -5,6 +5,7 @@ const $over = document.createElement('img')
 const $music = document.createElement('embed')
 const $sound = document.createElement('embed')
 const $sad = document.createElement('embed')
+const $button = document.createElement('button')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -34,6 +35,8 @@ Object.assign($sad.style, {
   width: '2px',
   height: '0'
 })
+
+$button.textContent = 'Continue?'
 
 $car.setAttribute('style', 'width: 100px; height: 140px;')
 $car.style.transform = 'rotate(180deg)'
@@ -82,6 +85,9 @@ class Car {
       setTimeout(function update() {
         document.body.appendChild($sad)
       }, 1200)
+      setTimeout(function update() {
+        document.body.appendChild($button)
+      }, 5000)
     }
     else if (this.location[1] > 600 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
@@ -94,6 +100,9 @@ class Car {
       setTimeout(function update() {
         document.body.appendChild($sad)
       }, 1200)
+      setTimeout(function update() {
+        document.body.appendChild($button)
+      }, 5000)
     }
   }
 
@@ -129,6 +138,10 @@ class Car {
     }
   }
 }
+
+$button.addEventListener('click', function refresh() {
+  location.reload()
+})
 
 const chronoJet = new Car($car, 'south', 20, [0, 0])
 

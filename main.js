@@ -2,6 +2,7 @@
 
 const $car = document.createElement('img')
 const $over = document.createElement('img')
+const $music = document.createElement('embed')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -9,12 +10,21 @@ $car.setAttribute('src', 'car.jpg')
 $over.setAttribute('class', 'over')
 $over.setAttribute('src', 'gameover.jpg')
 
+$music.setAttribute('src', 'game.mp3')
+$music.setAttribute('autostart', 'true')
+$music.setAttribute('loop', 'true')
+Object.assign($music.style, {
+  width: '2px',
+  height: '0'
+})
+
 $car.setAttribute('style', 'width: 100px; height: 140px;')
 $car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
 
 let started = false
+let startedBgm = false
 
 class Car {
   constructor(car, direction, speed, location) {
@@ -47,16 +57,18 @@ class Car {
     if (this.location[0] > 1300 || this.location[0] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
+      document.body.removeChild($music)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 500)
+      }, 700)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 500)
+      }, 700)
     }
     else if (this.location[1] > 600 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
+      document.body.removeChild($music)
       setTimeout(function update() {
         document.body.appendChild($over)
       }, 500)
@@ -102,6 +114,11 @@ document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 32) {
     Car.start(chronoJet)
+    const $body = document.querySelector('body')
+    if (startedBgm === false) {
+      startedBgm = true
+      $body.appendChild($music)
+    }
   }
   else if (key === 83) {
     Car.stop(chronoJet)

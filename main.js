@@ -3,6 +3,7 @@
 const $car = document.createElement('img')
 const $over = document.createElement('img')
 const $music = document.createElement('embed')
+const $sound = document.createElement('embed')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -14,6 +15,13 @@ $music.setAttribute('src', 'game.mp3')
 $music.setAttribute('autostart', 'true')
 $music.setAttribute('loop', 'true')
 Object.assign($music.style, {
+  width: '2px',
+  height: '0'
+})
+
+$sound.setAttribute('src', 'explosion.wav')
+$sound.setAttribute('autostart', 'true')
+Object.assign($sound.style, {
   width: '2px',
   height: '0'
 })
@@ -58,6 +66,7 @@ class Car {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
+      document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
       }, 700)
@@ -69,6 +78,7 @@ class Car {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
+      document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
       }, 500)

@@ -1,44 +1,133 @@
 img {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  left: 660px;
+  top: 10px;
 }
 
 button {
   position: relative;
+  color: black;
   height: 70px;
   width: 120px;
-  color: white;
   border-radius: 5px;
-  left: 1200px;
-  top: 650px;
+  left: 593px;
+  top: 550px;
+  background-color: lightGrey;
+  animation: neon1 1.95s ease-in-out infinite alternate;
 }
 
 .over {
+  position: absolute;
   width: 1480px;
   height: 860px;
-  transition: opacity 3s;
+  left: -10px;
+  top: -20px;
+  animation: fadein 3s;
 }
 
 .box1 {
   position: absolute;
-  left: 50px;
-  bottom: 50px;
-  width: 200px;
-  height: 120px;
-  border: 3px solid black;
+  left: 100px;
+  bottom: 100px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border: 3px solid grey;
 }
 
 .box2 {
   position: absolute;
-  right: 80px;
-  top: 50px;
-  width: 120px;
-  height: 200px;
-  border: 3px solid black;
+  right: 130px;
+  top: 100px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border: 3px solid grey;
 }
 
-@keyframes fadein {
+.box3 {
+  position: absolute;
+  right: 80px;
+  bottom: 70px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border: 3px solid grey;
+}
+
+.box4 {
+  position: absolute;
+  left: 80px;
+  top: 100px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border: 3px solid grey;
+}
+
+.box5 {
+  position: absolute;
+  right: 310px;
+  top: 400px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px solid tomato;
+  animation: move 3s ease-in-out infinite;
+}
+
+.box6 {
+  position: absolute;
+  left: 280px;
+  top: 400px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px solid tomato;
+  animation: move2 1.95s ease-in-out infinite;
+}
+
+@-webkit-keyframes fadein {
   from { opacity: 0; }
   to { opacity: 100; }
+}
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow:
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 3px #fff,
+      0 0 4px #fff,
+      0 0 8px #fff,
+      0 0 12px #484848,
+      0 0 15px #484848,
+      0 0 20px #484848;
+  }
+
+  to {
+    text-shadow:
+      0 0 0 #fff,
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 3px #fff,
+      0 0 40px #fff,
+      0 0 5px #fff,
+      0 0 6px #fff,
+      0 0 7px #484848;
+  }
+}
+
+@-webkit-keyframes move {
+  0% { right: 0; }
+  50% { right: 30%; }
+  100% { right: 0; }
+}
+
+@-webkit-keyframes move2 {
+  0% { top: 0; }
+  50% { top: 80%; }
+  100% { top: 0; }
 }

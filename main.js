@@ -6,6 +6,12 @@ const $music = document.createElement('embed')
 const $sound = document.createElement('embed')
 const $sad = document.createElement('embed')
 const $button = document.createElement('button')
+const $box1 = document.createElement('div')
+const $box2 = document.createElement('div')
+const $box3 = document.createElement('div')
+const $box4 = document.createElement('div')
+const $box5 = document.createElement('div')
+const $box6 = document.createElement('div')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -36,12 +42,25 @@ Object.assign($sad.style, {
   height: '0'
 })
 
+$box1.setAttribute('class', 'box1')
+$box2.setAttribute('class', 'box2')
+$box3.setAttribute('class', 'box3')
+$box4.setAttribute('class', 'box4')
+$box5.setAttribute('class', 'box5')
+$box6.setAttribute('class', 'box6')
+
 $button.textContent = 'Continue?'
 
-$car.setAttribute('style', 'width: 100px; height: 140px;')
+$car.setAttribute('style', 'width: 60px; height: 80px;')
 $car.style.transform = 'rotate(180deg)'
 
 document.body.appendChild($car)
+document.body.appendChild($box1)
+document.body.appendChild($box2)
+document.body.appendChild($box3)
+document.body.appendChild($box4)
+document.body.appendChild($box5)
+document.body.appendChild($box6)
 
 let started = false
 let startedBgm = false
@@ -74,36 +93,77 @@ class Car {
       left: this.location[0] + 'px',
       top: this.location[1] + 'px'
     })
-    if (this.location[0] > 1300 || this.location[0] <= -1) {
+    if (this.location[0] > 1350 || this.location[0] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
       document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 700)
-      setTimeout(function update() {
-        document.body.appendChild($sad)
       }, 1200)
       setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1500)
+      setTimeout(function update() {
         document.body.appendChild($button)
-      }, 5000)
+      }, 7300)
     }
-    else if (this.location[1] > 600 || this.location[1] <= -1) {
+    else if (this.location[1] > 690 || this.location[1] <= -1) {
       $car.setAttribute('src', 'explode.png')
       this.speed = 0
       document.body.removeChild($music)
       document.body.appendChild($sound)
       setTimeout(function update() {
         document.body.appendChild($over)
-      }, 700)
-      setTimeout(function update() {
-        document.body.appendChild($sad)
       }, 1200)
       setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1500)
+      setTimeout(function update() {
         document.body.appendChild($button)
-      }, 5000)
+      }, 7300)
     }
+    else if (this.location[1] > 500 && this.location[0] < 120) {
+      document.body.removeChild($box1)
+      setTimeout(function reappear() {
+        document.body.appendChild($box1)
+      }, 1000)
+    }
+    else if (this.location[0] > 1200 && this.location[1] < 120) {
+      document.body.removeChild($box2)
+      setTimeout(function reappear() {
+        document.body.appendChild($box2)
+      }, 1000)
+    }
+    else if (this.location[0] > 1200 && this.location[1] > 550) {
+      document.body.removeChild($box3)
+      setTimeout(function reappear() {
+        document.body.appendChild($box3)
+      }, 1000)
+    }
+    else if (this.location[1] < 120 && this.location[0] < 120) {
+      document.body.removeChild($box4)
+      setTimeout(function reappear() {
+        document.body.appendChild($box4)
+      }, 1000)
+    }
+    /*
+    else if (this.location[0] === 300 && this.location[1] === 370) {
+      $car.setAttribute('src', 'explode.png')
+      this.speed = 0
+      document.body.removeChild($music)
+      document.body.appendChild($sound)
+      setTimeout(function update() {
+        document.body.appendChild($over)
+      }, 1200)
+      setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1500)
+      setTimeout(function update() {
+        document.body.appendChild($button)
+      }, 7300)
+    }
+    */
   }
 
   static start(car) {
@@ -112,7 +172,7 @@ class Car {
       this.id = setInterval(function () {
         car.move()
         car.position()
-      }, 100)
+      }, 30)
     }
   }
 
@@ -143,7 +203,7 @@ $button.addEventListener('click', function refresh() {
   location.reload()
 })
 
-const chronoJet = new Car($car, 'south', 20, [0, 0])
+const chronoJet = new Car($car, 'south', 12, [660, 10])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
@@ -183,9 +243,11 @@ document.body.addEventListener('keydown', function (event) {
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
   if (key === 65) {
-    chronoJet.accelerate(10)
+    if (started) {
+      chronoJet.accelerate(3)
+    }
   }
   else if (key === 90) {
-    chronoJet.decelerate(10)
+    chronoJet.decelerate(3)
   }
 })

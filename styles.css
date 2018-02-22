@@ -1,7 +1,9 @@
+body {
+  background-color: black;
+}
+
 img {
   position: relative;
-  left: 660px;
-  top: 10px;
 }
 
 button {
@@ -14,6 +16,12 @@ button {
   top: 550px;
   background-color: lightGrey;
   animation: neon1 1.95s ease-in-out infinite alternate;
+}
+
+.car {
+  left: 660px;
+  top: 10px;
+  filter: invert(100%);
 }
 
 .over {
@@ -33,6 +41,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box2 {
@@ -43,6 +60,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box3 {
@@ -53,6 +79,15 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box4 {
@@ -63,12 +98,27 @@ button {
   height: 20px;
   background-color: black;
   border: 3px solid grey;
+  box-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #fff,
+    0 0 14px #fff,
+    0 0 18px #fff,
+    0 0 22px #484848,
+    0 0 30px #484848,
+    0 0 40px #484848;
 }
 
 .box5 {
   position: absolute;
   right: 310px;
   top: 400px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border: 3px solid tomato;
+  border-radius: 50%;
+  animation: move 3s ease-in-out infinite alternate;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -81,6 +131,23 @@ button {
   position: absolute;
   left: 280px;
   top: 400px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border: 3px solid tomato;
+  border-radius: 50%;
+  animation: move2 1.95s ease-in-out infinite alternate;
+}
+
+.beat {
+  position: relative;
+  width: 1480px;
+  height: 860px;
+  top: -100px;
+  left: -10px;
+  margin: 0 auto;
+  background-color: white;
+  animation: fadein 3s;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -96,7 +163,7 @@ button {
 
 @-webkit-keyframes neon1 {
   from {
-    text-shadow:
+    box-shadow:
       0 0 1px #fff,
       0 0 2px #fff,
       0 0 3px #fff,
@@ -108,7 +175,7 @@ button {
   }
 
   to {
-    text-shadow:
+    box-shadow:
       0 0 0 #fff,
       0 0 1px #fff,
       0 0 2px #fff,
@@ -120,9 +187,40 @@ button {
   }
 }
 
+@-webkit-keyframes neon2 {
+  from {
+    box-shadow:
+      0 0 1px #fff,
+      0 0 3px #fff,
+      0 0 5px #fff,
+      0 0 8px #fff,
+      0 0 12px #fff,
+      0 0 18px #ec7056,
+      0 0 25px #ec7056,
+      0 0 35px #ec7056;
+  }
+
+  to {
+    box-shadow:
+      0 0 0 #fff,
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 3px #fff,
+      0 0 40px #fff,
+      0 0 5px #fff,
+      0 0 6px #fff,
+      0 0 7px #ec7056;
+  }
+}
+
+@-webkit-keyframes move {
+  0% { right: 0; }
+  50% { right: 40%; }
+
 @-webkit-keyframes move {
   0% { right: 0; }
   50% { right: 30%; }
+
   100% { right: 0; }
 }
 

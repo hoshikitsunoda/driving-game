@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+alert('Hit space bar to start, A key to accelerate, Z key to decelerate and S key to stop.')
+
 const $car = document.createElement('img')
 const $over = document.createElement('img')
 const $music = document.createElement('embed')
@@ -12,6 +14,7 @@ const $box3 = document.createElement('div')
 const $box4 = document.createElement('div')
 const $box5 = document.createElement('div')
 const $box6 = document.createElement('div')
+const $beat = document.createElement('div')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -53,6 +56,8 @@ $button.textContent = 'Continue?'
 
 $car.setAttribute('style', 'width: 60px; height: 80px;')
 $car.style.transform = 'rotate(180deg)'
+
+$beat.setAttribute('class', 'beat')
 
 document.body.appendChild($car)
 document.body.appendChild($box1)
@@ -193,6 +198,11 @@ class Car {
     if (this.speed > 0) {
       this.speed -= amount
     }
+    else if (this.speed === 0) {
+      setTimeout(function () {
+        document.body.appendChild($beat)
+      }, 15000)
+    }
     else {
       this.speed = 0
     }
@@ -203,7 +213,7 @@ $button.addEventListener('click', function refresh() {
   location.reload()
 })
 
-const chronoJet = new Car($car, 'south', 12, [660, 10])
+const chronoJet = new Car($car, 'south', 27, [660, 10])
 
 document.body.addEventListener('keydown', function () {
   const key = event.keyCode
@@ -217,6 +227,9 @@ document.body.addEventListener('keydown', function () {
   }
   else if (key === 83) {
     Car.stop(chronoJet)
+    setTimeout(function () {
+      document.body.appendChild($beat)
+    }, 15000)
   }
 })
 

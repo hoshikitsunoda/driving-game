@@ -15,6 +15,7 @@ const $box4 = document.createElement('div')
 const $box5 = document.createElement('div')
 const $box6 = document.createElement('div')
 const $beat = document.createElement('div')
+const $message = document.createElement('h1')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -52,12 +53,14 @@ $box4.setAttribute('class', 'box4')
 $box5.setAttribute('class', 'box5')
 $box6.setAttribute('class', 'box6')
 
-$button.textContent = 'Continue?'
-
 $car.setAttribute('style', 'width: 60px; height: 80px;')
 $car.style.transform = 'rotate(180deg)'
 
 $beat.setAttribute('class', 'beat')
+$message.setAttribute('class', 'message')
+
+$button.textContent = 'Continue?'
+$message.textContent = 'Do nothing. And everything will be done.'
 
 document.body.appendChild($car)
 document.body.appendChild($box1)
@@ -202,6 +205,9 @@ class Car {
       setTimeout(function () {
         document.body.appendChild($beat)
       }, 15000)
+      setTimeout(function () {
+        document.body.appendChild($message)
+      }, 17000)
     }
     else {
       this.speed = 0
@@ -230,6 +236,9 @@ document.body.addEventListener('keydown', function () {
     setTimeout(function () {
       document.body.appendChild($beat)
     }, 15000)
+    setTimeout(function () {
+      document.body.appendChild($message)
+    }, 17000)
   }
 })
 

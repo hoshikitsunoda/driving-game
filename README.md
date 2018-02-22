@@ -1,10 +1,10 @@
 # driving-game
-A web app for people who want to play philosophical driving game.
+A web app for people who want to play a philosophical driving game.
 
 Are the obstacles really the obstacles or your mind is creating it?<br />
 Is it always good to beat it?<br />
 If you try to reach it, you will never reach it.<br />
-Maybe the best thing is just sit still and wait for things to resolve by itself.
+Maybe the best thing is just sit still and wait for things to resolve by itself.<br />
 
 # Usage
 ```

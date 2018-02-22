@@ -16,6 +16,7 @@ const $box5 = document.createElement('div')
 const $box6 = document.createElement('div')
 const $beat = document.createElement('div')
 const $message = document.createElement('h1')
+const $endMusic = document.createElement('embed')
 
 $car.setAttribute('class', 'car')
 $car.setAttribute('src', 'car.jpg')
@@ -42,6 +43,13 @@ $sad.setAttribute('src', 'sadmusic.mp3')
 $sad.setAttribute('autostart', 'true')
 $sad.setAttribute('loop', 'true')
 Object.assign($sad.style, {
+  width: '2px',
+  height: '0'
+})
+
+$endMusic.setAttribute('src', 'nothing.mp3')
+$endMusic.setAttribute('autostart', 'true')
+Object.assign($endMusic.style, {
   width: '2px',
   height: '0'
 })
@@ -206,8 +214,13 @@ class Car {
         document.body.appendChild($beat)
       }, 15000)
       setTimeout(function () {
+        document.body.removeChild($music)
         document.body.appendChild($message)
+        document.body.appendChild($endMusic)
       }, 17000)
+      setTimeout(function () {
+        document.body.appendChild($endMusic)
+      }, 18000)
     }
     else {
       this.speed = 0
@@ -237,8 +250,13 @@ document.body.addEventListener('keydown', function () {
       document.body.appendChild($beat)
     }, 15000)
     setTimeout(function () {
+      document.body.removeChild($music)
       document.body.appendChild($message)
+      document.body.appendChild($endMusic)
     }, 17000)
+    setTimeout(function () {
+      document.body.appendChild($endMusic)
+    }, 18000)
   }
 })
 

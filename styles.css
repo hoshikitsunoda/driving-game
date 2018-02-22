@@ -119,6 +119,12 @@ button {
   border: 3px solid tomato;
   border-radius: 50%;
   animation: move 3s ease-in-out infinite alternate;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px solid tomato;
+  animation: move 3s ease-in-out infinite;
 }
 
 .box6 {
@@ -142,6 +148,12 @@ button {
   margin: 0 auto;
   background-color: white;
   animation: fadein 3s;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px solid tomato;
+  animation: move2 1.95s ease-in-out infinite;
 }
 
 @-webkit-keyframes fadein {
@@ -204,6 +216,11 @@ button {
 @-webkit-keyframes move {
   0% { right: 0; }
   50% { right: 40%; }
+
+@-webkit-keyframes move {
+  0% { right: 0; }
+  50% { right: 30%; }
+
   100% { right: 0; }
 }
 

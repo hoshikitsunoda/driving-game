@@ -152,6 +152,23 @@ class Car {
         document.body.appendChild($box4)
       }, 1000)
     }
+    /*
+    else if (this.location[0] === 300 && this.location[1] === 370) {
+      $car.setAttribute('src', 'explode.png')
+      this.speed = 0
+      document.body.removeChild($music)
+      document.body.appendChild($sound)
+      setTimeout(function update() {
+        document.body.appendChild($over)
+      }, 1200)
+      setTimeout(function update() {
+        document.body.appendChild($sad)
+      }, 1500)
+      setTimeout(function update() {
+        document.body.appendChild($button)
+      }, 7300)
+    }
+    */
   }
 
   static start(car) {
@@ -160,7 +177,7 @@ class Car {
       this.id = setInterval(function () {
         car.move()
         car.position()
-      }, 60)
+      }, 30)
     }
   }
 
